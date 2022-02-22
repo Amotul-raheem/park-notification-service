@@ -17,7 +17,7 @@ const sendMail = (recipients, content, subject) => {
         from: process.env.AUTH_USER,
         to: recipients,
         subject: subject,
-        text: content
+        html: content
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
@@ -29,6 +29,5 @@ const sendMail = (recipients, content, subject) => {
     });
 
 }
-
 
 export default sendMail;
