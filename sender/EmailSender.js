@@ -3,7 +3,6 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
-// https://www.w3schools.com/nodejs/nodejs_email.asp
 const sendMail = (recipients, content, subject) => {
     const transporter = nodemailer.createTransport({
         service: process.env.SENDER_SERVICE,
@@ -17,18 +16,17 @@ const sendMail = (recipients, content, subject) => {
         from: process.env.AUTH_USER,
         to: recipients,
         subject: subject,
-        text: content
+        html: content
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             throw new error("Email Failed to send", error)
         } else {
-            console.log('Email sent: ' + info.response);
+            console.log('Email sent to ' + recipients + '. ' + info.response);
         }
     });
 
 }
-
 
 export default sendMail;
