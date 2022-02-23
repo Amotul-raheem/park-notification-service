@@ -1,7 +1,7 @@
 import express from "express"
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
-import resetPasswordNotificationRouter from "./routes/ResetPasswordNotificationRouter.js";
+import ResetPasswordNotificationRouter from "./routes/ResetPasswordNotificationRouter.js";
 
 
 dotenv.config()
@@ -12,10 +12,7 @@ app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 
 const PORT = process.env.PORT
 
-app.use("/api/reset-password-notification", resetPasswordNotificationRouter);
-// app.use("/booking-reminder", authRouter);)
-// app.use("/account-verification", authRouter);
-// app.use("/resetPasswordNotification", authRouter);
+app.use("/api/reset-password-notification", ResetPasswordNotificationRouter);
 
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)
