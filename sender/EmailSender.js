@@ -3,7 +3,6 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
-// https://www.w3schools.com/nodejs/nodejs_email.asp
 const sendMail = (recipients, content, subject) => {
     const transporter = nodemailer.createTransport({
         service: process.env.SENDER_SERVICE,
