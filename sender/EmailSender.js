@@ -26,7 +26,6 @@ const sendMail = (recipients, content, subject) => {
             console.log('Email sent to ' + recipients + '. ' + info.response);
         }
     });
-
 }
 
 export default sendMail;
