@@ -22,49 +22,28 @@
 
         .account-verification-container {
             width: 600px;
-            height: 450px;
+            height: 400px;
             background: #FFFFFF;
             border-radius: 29px;
-            padding: 50px 20px 20px 20px;
+            padding: 20px;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
-        .account-verification-content {
-            margin-top: 30px;
-        }
-
-        .mail-image-container {
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .mail-image {
-            width: 45px;
-            height: 45px;
-        }
-
         .account-verification-content-message {
-            padding: 30px;
+            padding: 30px 30px 30px 65px;
             font-size: 24px;
             line-height: 35px;
             color: #576072;
             margin: 0;
-            text-align: center;
         }
 
-        .account-verification-header {
-            font-weight: normal;
-            font-size: 40px;
-            line-height: 46px;
-            color: #01194A;
-        }
 
-        .account-verification-message {
+        .account-verification-message-top {
             margin-top: 40px;
+            text-transform: capitalize;
         }
 
         .account-verification-button-container {
@@ -72,7 +51,7 @@
         }
 
         .account-verification-button {
-            width: 500px;
+            width: 450px;
             height: 60px;
             background: #01194A;
             border: 1px solid #000000;
@@ -81,8 +60,9 @@
             font-size: 20px;
             cursor: pointer;
             text-decoration: none;
-            margin-left: 10px;
+            margin-left: 35px;
         }
+
         a {
             text-decoration: none;
             color: #FFFFFF;
@@ -91,21 +71,17 @@
 
 </head>
 <body>
-    <div class="account-verification">
-       <div class="account-verification-container">
-           <div class="account-verification-content">
-               <div class="mail-image-container">
-               <img src="../../images/mail.png" alt="mail-image" class="mail-image" />
-               </div>
-               <div class="account-verification-content-message">
-                   <h1 class="account-verification-header">Account Verification</h1>
-                   <p class="account-verification-message">Hi! {{username}}, please verify your email by clicking the button below and start booking</p>
-               </div>
-               <div class="account-verification-button-container">
-                   <button class="account-verification-button"><a href={{link}}>Reset password </a></button>
-               </div>
-           </div>
-       </div>
+<div class="account-verification">
+    <div class="account-verification-container">
+        <div class="account-verification-content-message">
+            <p class="account-verification-message-top">Hi {{username}},</p>
+            <p class="account-verification-message-bottom">Please verify your email by clicking the button below and
+                start booking.</p>
+        </div>
+        <div class="account-verification-button-container">
+            <button class="account-verification-button"><a href={{link}}> Verify Email </a></button>
+        </div>
     </div>
+</div>
 </body>
 </html>

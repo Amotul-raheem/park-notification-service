@@ -1,26 +1,15 @@
 import express from "express";
 import handlebars from "handlebars";
-import fs from "fs";
 import sendMail from "../sender/EmailSender.js";
 import {EMAIL_PROPERTIES} from "../NotificationConstant.js";
+import readHTMLFile from "../Utilities/ReadHtmlFile.js";
 
 const ResetPasswordNotificationRouter = express.Router();
-
-function readHTMLFile(path, callback) {
-    fs.readFile(path, {encoding: 'utf-8'}, function (err, html) {
-        if (err) {
-            callback(err);
-            throw err;
-        } else {
-            callback(null, html);
-        }
-    });
-}
 
 ResetPasswordNotificationRouter.post("/", (req, res) => {
     const username = req.body.username
     const email = req.body.email
-    const resetPasswordLink = req.body.resetPasswordLink
+    const resetPasswordLink = req.body.Link
 
     readHTMLFile(EMAIL_PROPERTIES.RESET_PASSWORD.templateDirectory, function (err, html) {
 

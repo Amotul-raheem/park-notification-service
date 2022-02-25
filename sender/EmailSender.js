@@ -22,7 +22,6 @@ const sendMail = (recipients, content, subject) => {
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             throw new error("Email Failed to send", error)
-            // console.log(error)
         } else {
             console.log('Email sent to ' + recipients + '. ' + info.response);
         }

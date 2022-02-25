@@ -1,22 +1,10 @@
 import express from "express";
 import handlebars from "handlebars";
-import fs from "fs";
 import sendMail from "../sender/EmailSender.js";
 import {EMAIL_PROPERTIES} from "../NotificationConstant.js";
-
-function readHTMLFile(path, callback) {
-    fs.readFile(path, {encoding: 'utf-8'}, function (err, html) {
-        if (err) {
-            callback(err);
-            throw err;
-        } else {
-            callback(null, html);
-        }
-    });
-}
+import readHTMLFile from "../Utilities/ReadHtmlFile.js";
 
 const AccountVerificationRouter = express.Router();
-
 
 AccountVerificationRouter.post("/", async (req, res) => {
     const username = req.body.username
