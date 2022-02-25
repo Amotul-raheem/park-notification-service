@@ -2,14 +2,14 @@ import express from "express";
 import handlebars from "handlebars";
 import sendMail from "../sender/EmailSender.js";
 import {EMAIL_PROPERTIES} from "../NotificationConstant.js";
-import readHTMLFile from "../Utilities/ReadHtmlFile.js";
+import readHTMLFile from "../Utils/FileUtils.js";
 
-const AccountVerificationRouter = express.Router();
+const accountVerificationRouter = express.Router();
 
-AccountVerificationRouter.post("/", async (req, res) => {
+accountVerificationRouter.post("/", async (req, res) => {
     const username = req.body.username
     const email = req.body.email
-    const accountVerifiedLink = req.body.accountVerifiedLink
+    const accountVerifiedLink = req.body.link
 
     readHTMLFile(EMAIL_PROPERTIES.ACCOUNT_VERIFICATION.templateDirectory, function (err, html) {
         const template = handlebars.compile(html);
@@ -28,4 +28,4 @@ AccountVerificationRouter.post("/", async (req, res) => {
     });
 });
 
-export default AccountVerificationRouter;
+export default accountVerificationRouter;

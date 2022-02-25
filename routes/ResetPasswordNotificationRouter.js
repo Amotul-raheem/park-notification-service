@@ -2,14 +2,14 @@ import express from "express";
 import handlebars from "handlebars";
 import sendMail from "../sender/EmailSender.js";
 import {EMAIL_PROPERTIES} from "../NotificationConstant.js";
-import readHTMLFile from "../Utilities/ReadHtmlFile.js";
+import readHTMLFile from "../Utils/FileUtils.js";
 
-const ResetPasswordNotificationRouter = express.Router();
+const resetPasswordNotificationRouter = express.Router();
 
-ResetPasswordNotificationRouter.post("/", (req, res) => {
+resetPasswordNotificationRouter.post("/", (req, res) => {
     const username = req.body.username
     const email = req.body.email
-    const resetPasswordLink = req.body.Link
+    const resetPasswordLink = req.body.link
 
     readHTMLFile(EMAIL_PROPERTIES.RESET_PASSWORD.templateDirectory, function (err, html) {
 
@@ -29,4 +29,4 @@ ResetPasswordNotificationRouter.post("/", (req, res) => {
 });
 
 
-export default ResetPasswordNotificationRouter
+export default resetPasswordNotificationRouter
