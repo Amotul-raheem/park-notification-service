@@ -10,5 +10,9 @@ export const EMAIL_PROPERTIES = {
     ACCOUNT_VERIFICATION: {
         subject: "Account verification",
         templateDirectory: BASE_PATH + '/templates/account-verification/account-verification.html'
+    },
+    BOOKING: {
+        subject: "Booking successful",
+        templateDirectory: BASE_PATH + 'templates/booking-notification/booking-notification.html'
     }
 }

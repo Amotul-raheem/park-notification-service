@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import resetPasswordNotificationRouter from "./routes/ResetPasswordNotificationRouter.js";
 import accountVerificationRouter from "./routes/AccountVerificationRouter.js";
+import bookingNotificationRouter from "./routes/bookingNotificationRouter.js";
 
 
 dotenv.config()
@@ -15,6 +16,7 @@ const PORT = process.env.PORT
 
 app.use("/api/reset-password-notification", resetPasswordNotificationRouter);
 app.use("/api/account-verification", accountVerificationRouter);
+app.use("/api/booking-notification", bookingNotificationRouter);
 
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)
