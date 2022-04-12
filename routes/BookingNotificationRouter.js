@@ -13,6 +13,7 @@ bookingNotificationRouter.post("/", async (req, res) => {
     const checkIn = req.body.checkIn
     const checkOut = req.body.checkOut
     const space_name = req.body.space_name
+    const email = req.body.email
 
 
     readHTMLFile(EMAIL_PROPERTIES.BOOKING.templateDirectory, function (err, html) {
