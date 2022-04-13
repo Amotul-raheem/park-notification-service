@@ -13,6 +13,6 @@ export const EMAIL_PROPERTIES = {
     },
     BOOKING: {
         subject: "Booking successful",
-        templateDirectory: BASE_PATH + 'templates/booking-notification/booking-notification.html'
+        templateDirectory: BASE_PATH + '/templates/booking-notification/booking-notification.html'
     }
 }
