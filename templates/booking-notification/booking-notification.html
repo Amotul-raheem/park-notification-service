@@ -31,37 +31,42 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
-        .booking-notification-message{
-            padding: 30px ;
+        .text{
+            margin: 0;
+        }
+        .user-text{
+            margin-bottom: 15px;
+        }
+        .booking-notification-message {
+            padding: 30px;
             font-size: 22px;
             line-height: 35px;
             color: #576072;
             margin: 0;
         }
 
-        .colored-text{
+        .colored-text {
             color: #4A2CFC;
         }
     </style>
 </head>
 <body>
-    <div class="booking-notification">
-        <div class="booking-notification-container">
-            <div class="booking-notification-message">
-                <p>Hello
-                    <span class="colored-text">{{Username}}</span>
-                    . You've successfully booked space
-                    <span class="colored-text">{{space_name}} </span>
-                    for the day
-                    <span class="colored-text">{{checkIn}}</span>
-                    to
-                    <span class="colored-text">{{checkOut}}</span>
-                    .
-                </p>
-                <p>A notification email will be sent to you a day before your booking. Thanks for choosing us. Stay safe. </p>
-            </div>
+<div class="booking-notification">
+    <div class="booking-notification-container">
+        <div class="booking-notification-message">
+            <p class="text user-text">
+                Hello,
+                <span class="colored-text">{{username}}</span>.
+            </p>
+            <p class="text">You've successfully booked space
+                <span class="colored-text">{{space_name}} </span>
+                for the day <span class="colored-text">{{checkIn}}</span> to
+                <span class="colored-text">{{checkOut}}</span>.
+            </p>
+            <p class="text">A notification email will be sent to you a day before your booking. Thanks for choosing us. Stay
+                safe. </p>
         </div>
     </div>
+</div>
 </body>
 </html>

@@ -15,7 +15,6 @@ bookingNotificationRouter.post("/", async (req, res) => {
     const space_name = req.body.space_name
     const email = req.body.email
 
-
     readHTMLFile(EMAIL_PROPERTIES.BOOKING.templateDirectory, function (err, html) {
         const template = handlebars.compile(html);
         const replacements = {
